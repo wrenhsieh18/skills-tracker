@@ -29,40 +29,61 @@ public class SkillsTrackerController {
                 "</html>";
     }
 
-    @PostMapping("ranking")
+    @PostMapping("form")
     public String rankSkills(@RequestParam String name, @RequestParam String first, @RequestParam String second, @RequestParam String third) {
         return "<html>" +
+                "<style>" +
+                "table, td {border: 1px solid black}" +
+                "</style>" +
                 "<body>" +
                 "<h1>" + name + "</h1>" +
-                "<ol>" +
-                "<li>" + first + "</li>" +
-                "<li>" + second + "</li>" +
-                "<li>" + third +"</li>" +
-                "</ol>" +
+                "<table>" +
+                "<tr>" +
+                    "<td>First Favorite</td>" +
+                    "<td>" + first + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td>Second Favorite</td>" +
+                    "<td>" + second + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td>Third Favorite</td>" +
+                    "<td>" + third + "</td>" +
+                "</tr>" +
+                "</table>" +
                 "</body>" +
                 "</html>";
+//
+//
+//
+//                "<ol>" +
+//                "<li>" + first + "</li>" +
+//                "<li>" + second + "</li>" +
+//                "<li>" + third +"</li>" +
+//                "</ol>" +
+
     }
 
     @GetMapping("form")
     public String trackerForm() {
         return "<html>" +
                 "<body>" +
-                "<form action = 'ranking' method = 'post'>" +
+                "<form action = 'form' method = 'post'>" +
                 "<label>Name:<br>" +
                 "<input type = 'text' name = 'name'></label>" +
-                "<label><br>My favorite language:<br>" +
+                "<label><br>My favorite language:" +
                 "<select name = 'first'>" +
                     "<option value = 'Java'>Java</option>" +
                     "<option value = 'JavaScript'>JavaScript</option>" +
                     "<option value = 'Python'>Python</option>" +
                 "</select></label>" +
-                "<label><br>My second favorite language:<br>" +
+                "<label><br>My second favorite language:" +
                 "<select name = 'second'>" +
                     "<option value = 'Java'>Java</option>" +
                     "<option value = 'JavaScript'>JavaScript</option>" +
                     "<option value = 'Python'>Python</option>" +
                 "</select></label>" +
-                "<label><br>My third favorite language:<br>" +
+                "<label><br>My third favorite language:" +
                 "<select name = 'third'>" +
                     "<option value = 'Java'>Java</option>" +
                     "<option value = 'JavaScript'>JavaScript</option>" +
